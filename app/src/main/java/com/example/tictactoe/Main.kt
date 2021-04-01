@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
 import com.example.tictactoe.databinding.FragmentMainBinding
 
 class Main : Fragment() {
@@ -18,13 +19,16 @@ class Main : Fragment() {
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
         binding.ttt.setOnClickListener {
-            fragmentManager?.beginTransaction()?.replace(R.id.fl, TicTacToe())?.addToBackStack(null)?.commit()
+            //fragmentManager?.beginTransaction()?.replace(R.id.fl, TicTacToe())?.addToBackStack(null)?.commit()
+            NavHostFragment.findNavController(this).navigate(R.id.action_main_to_ticTacToe)
         }
         binding.dr.setOnClickListener{
-            fragmentManager?.beginTransaction()?.replace(R.id.fl, DiceRoller())?.addToBackStack(null)?.commit()
+            //fragmentManager?.beginTransaction()?.replace(R.id.fl, DiceRoller())?.addToBackStack(null)?.commit()
+            NavHostFragment.findNavController(this).navigate(R.id.action_main_to_diceRoller)
         }
         binding.names.setOnClickListener{
-            fragmentManager?.beginTransaction()?.replace(R.id.fl, EditNames())?.addToBackStack(null)?.commit()
+            //fragmentManager?.beginTransaction()?.replace(R.id.fl, EditNames())?.addToBackStack(null)?.commit()
+            NavHostFragment.findNavController(this).navigate(R.id.action_main_to_editNames)
         }
         return binding.root
     }

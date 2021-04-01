@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main">
+
+    <fragment
+        android:id="@+id/main"
+        android:name="com.example.tictactoe.Main"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_main_to_ticTacToe"
+            app:destination="@id/ticTacToe" />
+        <action
+            android:id="@+id/action_main_to_diceRoller"
+            app:destination="@id/diceRoller" />
+        <action
+            android:id="@+id/action_main_to_editNames"
+            app:destination="@id/editNames" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticTacToe"
+        android:name="com.example.tictactoe.TicTacToe"
+        android:label="fragment_tic_tac_toe"
+        tools:layout="@layout/fragment_tic_tac_toe" />
+    <fragment
+        android:id="@+id/diceRoller"
+        android:name="com.example.tictactoe.DiceRoller"
+        android:label="fragment_dice_roller"
+        tools:layout="@layout/fragment_dice_roller" />
+    <fragment
+        android:id="@+id/editNames"
+        android:name="com.example.tictactoe.EditNames"
+        android:label="fragment_edit_names"
+        tools:layout="@layout/fragment_edit_names" />
+</navigation>
